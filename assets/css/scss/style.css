@@ -1,29 +1,18 @@
 /* Primary Colors */
-$Cyan: hsl(179, 62%, 43%);
-$brightYellow: hsl(71, 73%, 54%);
-$cyan2: #4abebd;
 /* Neutral Colors */
-$lightGray: hsl(204, 43%, 93%);
-$grayisBlue: hsl(218, 22%, 67%);
-$contrast: hsl(178, 61%, 69%);
-
 /* Font */
 @import url("https://fonts.googleapis.com/css?family=Karla:400,700&display=swap");
-$mainFont: "Karla", sans-serif;
-
 /* CSS RESET */
 /* Box sizing rules */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 /* Remove default padding */
 ul[class],
 ol[class] {
-  padding: 0;
-}
+  padding: 0; }
 
 /* Remove default margin */
 body,
@@ -40,142 +29,116 @@ figcaption,
 blockquote,
 dl,
 dd {
-  margin: 0;
-}
+  margin: 0; }
 
 /* Set core body defaults */
 body {
   min-height: 100vh;
   scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
+  line-height: 1.5; }
 
 /* Remove list styles on ul, ol elements with a class attribute */
 ul[class],
 ol[class] {
-  list-style: none;
-}
+  list-style: none; }
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
+  text-decoration-skip-ink: auto; }
 
 /* Make images easier to work with */
 img {
   max-width: 100%;
-  display: block;
-}
+  display: block; }
 
 /* Natural flow and rhythm in articles by default */
 article > * + * {
-  margin-top: 1em;
-}
+  margin-top: 1em; }
 
 /* Inherit fonts for inputs and buttons */
 input,
 button,
 textarea,
 select {
-  font: inherit;
-}
+  font: inherit; }
 
 body {
-  font-family: $mainFont;
-  background-color: $lightGray;
+  font-family: "Karla", sans-serif;
+  background-color: #e5eff5;
   display: flex;
   height: 100%;
-  flex-direction: column;
-}
+  flex-direction: column; }
 
 h1 {
-  color: $Cyan;
-  margin-bottom: 1rem;
-}
+  color: #2ab2af;
+  margin-bottom: 1rem; }
+
 h3 {
-  color: $brightYellow;
-  margin-bottom: 1rem;
-}
+  color: #c0df34;
+  margin-bottom: 1rem; }
+
 h4 {
-  color: #ffffff;
-}
+  color: #ffffff; }
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   margin: auto;
-  grid-template-areas:
-    "welcome welcome"
-    "sign-up us";
+  grid-template-areas: "welcome welcome" "sign-up us";
   box-shadow: 1px 2px 6px 1px #b3b3b3;
   border-radius: 10px;
-  overflow: hidden;
-  .welcome {
+  overflow: hidden; }
+  .grid-container .welcome {
     grid-area: welcome;
     background-color: white;
     padding: 2rem;
-    /*border-radius: 10px 10px 0 0;*/
-    p {
-      color: $grayisBlue;
-    }
-  }
-  .sign-up {
+    /*border-radius: 10px 10px 0 0;*/ }
+    .grid-container .welcome p {
+      color: #98a6bd; }
+  .grid-container .sign-up {
     grid-area: sign-up;
-    background-color: $Cyan;
+    background-color: #2ab2af;
     padding: 2rem;
     /*border-radius: 0 0 0 10px;*/
-    color: #ffffff;
-    .price {
+    color: #ffffff; }
+    .grid-container .sign-up .price {
       display: flex;
       align-items: center;
-      color: $contrast;
-      margin-top: 1rem;
-      span {
+      color: #80e0dd;
+      margin-top: 1rem; }
+      .grid-container .sign-up .price span {
         margin-right: 10px;
         font-size: 2rem;
         font-weight: 700;
-        color: #ffffff;
-      }
-    }
-    button {
+        color: #ffffff; }
+    .grid-container .sign-up button {
       width: 100%;
       border-radius: 5px;
       cursor: pointer;
       margin: 2rem 0 0;
       padding: 0.8rem;
-      background: $brightYellow;
+      background: #c0df34;
       color: #ffffff;
       border: 0;
-      transition: 1s ease-in-out;
-      &:hover {
-        background: $cyan2;
-        color: #ffffff;
-      }
-    }
-  }
-  .us {
+      transition: 1s ease-in-out; }
+      .grid-container .sign-up button:hover {
+        background: #4abebd;
+        color: #ffffff; }
+  .grid-container .us {
     grid-area: us;
-    background-color: $cyan2;
+    background-color: #4abebd;
     padding: 2rem;
-    /*border-radius: 0 0 10px 0;*/
-    .reasons {
+    /*border-radius: 0 0 10px 0;*/ }
+    .grid-container .us .reasons {
       font-size: 0.9rem;
-      color: $contrast;
-      margin-top: 30px;
-    }
-  }
-}
+      color: #80e0dd;
+      margin-top: 30px; }
 
 @media screen and (max-width: 600px) {
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas:
-      "welcome"
-      "sign-up"
-      "us";
-    margin: 2rem;
-  }
-}
+    grid-template-areas: "welcome" "sign-up" "us";
+    margin: 2rem; } }
